@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myCaL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./script.js">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Circle-icons-calculator.svg/1200px-Circle-icons-calculator.svg.png">
+<script src="./script.js"></script>
+<style>
+    .overlay{
+    position: absolute;
+    width: 500px;
+    bottom:0;
+    left: 0;
+    /* z-index: 100000; */
+}
+.inner{
+    position: fixed;
+    top: 9%;
+    left: 30%;
+    transition:translate(-50%,-50%);
+    
+}
+
+</style>
+</head>
+<body>
+    <section id="window">
+
+        
+        <div class="overlay">
+            <div class="inner">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-3 border border-2 border-dark m-5 bg-light rounded shadow w-50">
+                            <input type="text" id="cal" class="form-control my-2" placeholder="Enter" style="text-align: right;">
+                            <table width="100%" >
+                
+                                <tr>
+                                    
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(7)" id="sev" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">7</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(8)" id="eig"type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">8</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(9)"id="nin" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">9</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('*')"id="mul" type="button" class="btn btn-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-xmark fa-xs" style="color:  rgb(255, 165, 21);"></i></button></div></td>
+                                
+                                </tr>
+                                <tr>
+                                  
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(4)" id="four" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">4</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(5)"id="fiv" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">5</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(6)"id="six" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">6</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('-')"id="sub" type="button" class="btn btn-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-minus fa-xs" style="color:  rgb(255, 165, 21);"></i></button></div></td>
+                                
+                                </tr>
+                                <tr>
+                                   
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(1)"id="one" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">1</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(2)"id="two" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">2</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(3)"id="three" type="button" class="btn btn-light btn-block shadow-lg mb-2 bg-body-tertiary rounded">3</button></div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('+')"id="add" type="button" class="btn btn-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-plus fa-xs" style="color:  rgb(255, 165, 21);"></i></button></div></td>
+                                
+                                </tr>
+                                <tr>
+                                    
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('00')" id="tw" type="button" class="btn btn-light text-warning btn-block shadow-lg mb-3 p-2 bg-body-tertiary rounded">00</button>   </div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn(0)" id="zero" type="button" class="btn btn-light text-warning btn-block shadow-lg mb-3 p-2 bg-body-tertiary rounded">0</button>   </div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('.')" id="dot" type="button" class="btn btn-light text-warning btn-block shadow-lg mb-3 p-2 bg-body-tertiary rounded">.</button>   </div></td>
+                                    <td>
+                                        <div class="d-grid"><button onclick="btn('/')" id="div" type="button" class="btn btn-warning btn-block shadow-lg mb-3 p-2 bg-body-tertiary rounded"><i class="fa-solid fa-divide fa-xs" style="color:  rgb(255, 165, 21);"></i></button>   </div></td>
+                             
+                                </tr>
+                                <tr>
+                                    <td><button onclick="clearbox('AC')" id="AC" type="button" class="btn btn-light text-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded">AC</button></td>
+                                    <td><button onclick="dele()" id="dele" type="button" class="btn btn-light text-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-delete-left" style="color: rgb(255, 165, 21);"></i></button></td>
+                                    <td colspan="2">
+                                        <div class="d-grid ">  
+                                            <button onclick="equ('=')" id="equal"type="button" class="btn btn-warning btn-block shadow-lg mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-equals fa-xs" style="color:  rgb(255, 165, 21);"></i></button>
+                                        </div></td>
+                                   <td></td>
+                                 </tr>
+                            </table>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3"></div>
+                    </div>
+            </div>
+
+        </div>
+
+</section>
+
+
+</body>
+</html>
